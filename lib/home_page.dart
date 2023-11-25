@@ -291,7 +291,7 @@ class _HomePageState extends State<HomePage> {
                                     bool isAdmin1 = nameCon.text.trim()=='admin'&&surnameCon.text=='admin'&&numberCon.text=='123'&&scoreCon.text=='1';
                                     if(isAdmin1){
                                       SharedPreferences pref = await SharedPreferences.getInstance();
-                                      pref.setBool('login', true);
+                                      await pref.setBool('login', true);
                                       Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminPage(),));
                                         }else{
                                       FirebaseFirestore.instance
