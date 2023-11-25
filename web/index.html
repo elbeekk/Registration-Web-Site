@@ -31,7 +31,23 @@
 
   <title>Bright Future</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+  body {background-color: #FFFFFF;}
 
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    .loader {
+    }
+  </style>
   <script>
     // The value below is injected by flutter build, do not touch.
     const serviceWorkerVersion = null;
@@ -40,6 +56,9 @@
   <script src="flutter.js" defer></script>
 </head>
 <body>
+  <div class  = "loading">
+    <img src="./assets/waiting.gif" class = "loader"></div>
+  <script src = "main.dart.js" type="application/javascript"></script>
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js

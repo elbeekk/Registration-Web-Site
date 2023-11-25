@@ -50,12 +50,13 @@ class _HomePageState extends State<HomePage> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        appBar: AppBar(
-          title: Text('Bright Future',style: TextStyle(color: AppColors.primary),),
-          centerTitle: true,
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-        ),
+        backgroundColor: Colors.white,
+        // appBar: AppBar(
+        //   title: Text('Bright Future',style: TextStyle(color: AppColors.primary),),
+        //   centerTitle: true,
+        //   elevation: 0,
+        //   backgroundColor: Colors.transparent,
+        // ),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Center(
@@ -63,6 +64,11 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Center(
+                  child: SizedBox(
+                      height: MediaQuery.sizeOf(context).height*0.26,
+                      child: Image.asset('assets/logo.jpg',fit: BoxFit.fitHeight,)),
+                ),
                 Container(
                   constraints: const BoxConstraints(maxWidth: 500),
                   child: Padding(
@@ -292,6 +298,7 @@ class _HomePageState extends State<HomePage> {
                         Expanded(
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xff050c21),
                                 disabledBackgroundColor: Colors.blueGrey.shade100,
                                 minimumSize: const Size.fromHeight(50),
                                 shape: RoundedRectangleBorder(
@@ -357,6 +364,7 @@ class _HomePageState extends State<HomePage> {
                         Expanded(
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xff050c21),
                                 disabledBackgroundColor: Colors.green.shade100,
                                 minimumSize: const Size.fromHeight(50),
                                 shape: RoundedRectangleBorder(
