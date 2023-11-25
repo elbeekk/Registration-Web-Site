@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "24978308222",
+    "project_id": "bright-future-9effd",
+    "storage_bucket": "bright-future-9effd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24978308222:android:73832458584f748f9b6c2f",
+        "android_client_info": {
+          "package_name": "reg.page.reg_web_page"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlQXxaxYq_tvU-J84JpySZdtZTTd4WsAA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
