@@ -164,18 +164,18 @@ class _AdminPageState extends State<AdminPage> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Table(
-                          columnWidths: {
-                            0: const FixedColumnWidth(25),
-                            1: const FixedColumnWidth(130),
-                            2: const FixedColumnWidth(130),
-                            3: const FixedColumnWidth(130),
-                            4: const FixedColumnWidth(130),
-                            5: const FixedColumnWidth(102),
-                            6: const FixedColumnWidth(108),
-                            7: const FixedColumnWidth(90),
-                            8: const FixedColumnWidth(140),
-                            9: const FixedColumnWidth(35),
-                            10: const FixedColumnWidth(45),
+                          columnWidths: const {
+                            0: FixedColumnWidth(25),
+                            1: FixedColumnWidth(130),
+                            2: FixedColumnWidth(130),
+                            3: FixedColumnWidth(130),
+                            4: FixedColumnWidth(130),
+                            5: FixedColumnWidth(105),
+                            6: FixedColumnWidth(110),
+                            7: FixedColumnWidth(90),
+                            8: FixedColumnWidth(140),
+                            9: FixedColumnWidth(35),
+                            10: FixedColumnWidth(45),
                           },
                           defaultVerticalAlignment:
                               TableCellVerticalAlignment.middle,
