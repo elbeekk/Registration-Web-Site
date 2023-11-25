@@ -28,6 +28,15 @@ class _HomePageState extends State<HomePage> {
     setState(() {});
   }
 
+  @override
+  void dispose() {
+    nameCon.dispose();
+    surnameCon.dispose();
+    numberCon.dispose();
+    scoreCon.dispose();
+    super.dispose();
+  }
+
     @override
   void initState() {
     checkAdmin();
@@ -296,6 +305,10 @@ class _HomePageState extends State<HomePage> {
                                     if(isAdmin1){
                                       window.localStorage['login'] = 'true';
                                       isAdmin=true;
+                                      nameCon.clear();
+                                      surnameCon.clear();
+                                      numberCon.clear();
+                                      scoreCon.clear();
                                       Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminPage(),));
                                         }else{
                                       FirebaseFirestore.instance

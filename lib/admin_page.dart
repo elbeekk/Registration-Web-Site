@@ -715,20 +715,6 @@ class _AdminPageState extends State<AdminPage> {
                                         surnameCon.text.isNotEmpty &&
                                         scoreCon.text.isNotEmpty)
                                     ? () {
-                                        bool isAdmin =
-                                            nameCon.text.trim() == 'admin' &&
-                                                surnameCon.text == 'admin' &&
-                                                numberCon.text == '123' &&
-                                                scoreCon.text == '1';
-                                        if (isAdmin) {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const AdminPage(),
-                                              ));
-                                        } else {
-
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
                                             SnackBar(
@@ -762,7 +748,7 @@ class _AdminPageState extends State<AdminPage> {
                                             scoreCon.clear();
 
                                           });
-                                        }
+
                                       }
                                     : null,
                                 child: const Text('Qo\'shish'),
@@ -1067,19 +1053,6 @@ class _AdminPageState extends State<AdminPage> {
                                         surnameCon.text.isNotEmpty &&
                                         scoreCon.text.isNotEmpty)
                                     ? () {
-                                        bool isAdmin =
-                                            nameCon.text.trim() == 'admin' &&
-                                                surnameCon.text == 'admin' &&
-                                                numberCon.text == '123' &&
-                                                scoreCon.text == '1';
-                                        if (isAdmin) {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const AdminPage(),
-                                              ));
-                                        } else {
                                           Navigator.pop(context);
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
@@ -1112,7 +1085,7 @@ class _AdminPageState extends State<AdminPage> {
                                             numberCon.clear();
                                             scoreCon.clear();
                                           });
-                                        }
+
                                       }
                                     : null,
                                 child: const Text('Saqlash'),
