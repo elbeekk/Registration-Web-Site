@@ -1,8 +1,9 @@
+import 'dart:html';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:reg_web_page/admin_page.dart';
 import 'package:reg_web_page/constants.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -22,9 +23,9 @@ class _HomePageState extends State<HomePage> {
   EdgeInsets padding = const EdgeInsets.symmetric(horizontal: 25, vertical: 6);
   bool isAdmin = false;
   checkAdmin() async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
-      isAdmin=pref.getBool('login')!;
-      setState(() {});
+    String? isAdm = window.localStorage['login'];
+    isAdmin = bool.parse(isAdm??"false");
+    setState(() {});
   }
 
     @override
@@ -34,14 +35,17 @@ class _HomePageState extends State<HomePage> {
   }
   @override
   Widget build(BuildContext context) {
+    checkAdmin();
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Bright Future'),
+          title: Text('Bright Future',style: TextStyle(color: AppColors.primary),),
           centerTitle: true,
+          elevation: 0,
+          backgroundColor: Colors.transparent,
         ),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -290,8 +294,8 @@ class _HomePageState extends State<HomePage> {
                                 ? () async {
                                     bool isAdmin1 = nameCon.text.trim()=='admin'&&surnameCon.text=='admin'&&numberCon.text=='123'&&scoreCon.text=='1';
                                     if(isAdmin1){
-                                      SharedPreferences pref = await SharedPreferences.getInstance();
-                                      await pref.setBool('login', true);
+                                      window.localStorage['login'] = 'true';
+                                      isAdmin=true;
                                       Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminPage(),));
                                         }else{
                                       FirebaseFirestore.instance

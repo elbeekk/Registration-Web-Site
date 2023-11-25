@@ -87,7 +87,9 @@ class _AdminPageState extends State<AdminPage> {
             isEmpty = true;
           } else {
             isEmpty = false;
-            setState(() {});
+            Future.delayed(Duration(milliseconds: 100),() {
+              setState(() {});
+            },);
           }
         });
       });

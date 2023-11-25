@@ -1,3 +1,5 @@
+import "dart:html";
+
 import "package:firebase_core/firebase_core.dart";
 import "package:flutter/material.dart";
 import "package:reg_web_page/admin_page.dart";
@@ -16,10 +18,6 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  isAdmin() async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    pref.setBool('login', false);
-  }
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
