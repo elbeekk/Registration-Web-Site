@@ -297,8 +297,7 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Expanded(
                           child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xff050c21),
+                            style: ElevatedButton.styleFrom(backgroundColor: AppColors.button,
                                 disabledBackgroundColor: Colors.blueGrey.shade100,
                                 minimumSize: const Size.fromHeight(50),
                                 shape: RoundedRectangleBorder(
@@ -364,7 +363,7 @@ class _HomePageState extends State<HomePage> {
                         Expanded(
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0xff050c21),
+                                backgroundColor: AppColors.button,
                                 disabledBackgroundColor: Colors.green.shade100,
                                 minimumSize: const Size.fromHeight(50),
                                 shape: RoundedRectangleBorder(

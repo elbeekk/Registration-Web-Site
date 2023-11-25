@@ -72,42 +72,54 @@ class _AdminPageState extends State<AdminPage> {
 
   @override
   void initState() {
-    getData();
+    // getData();
     super.initState();
   }
-
-  getData() async {
-    if (isEmpty) {
-      Timer.periodic(const Duration(milliseconds: 500), (timer) async {
-        await FirebaseFirestore.instance
-            .collection('users')
-            .get()
-            .then((value) {
-          if (value.docs.isEmpty) {
-            isEmpty = true;
-          } else {
-            isEmpty = false;
-            Future.delayed(Duration(milliseconds: 100),() {
-              setState(() {});
-            },);
-          }
-        });
-      });
-    } else {
-      await FirebaseFirestore.instance.collection('users').get().then((value) {
-        if (value.docs.isEmpty) {
-          isEmpty = true;
-        } else {
-          isEmpty = false;
-        }
-      });
-    }
-    setState(() {});
-  }
+  //
+  // getData() async {
+  //   final smth = FirebaseFirestore.instance
+  //       .collection('users')
+  //       .get().asStream();
+  //   if(await smth.isEmpty){
+  //     setState(() {
+  //       isEmpty=true;
+  //     });
+  //   }else{
+  //     setState(() {
+  //       isEmpty=false;
+  //     });
+  //   }
+  //   // if (isEmpty) {
+  //   //   Timer.periodic(const Duration(milliseconds: 30), (timer) async {
+  //   //     await FirebaseFirestore.instance
+  //   //         .collection('users')
+  //   //         .get()
+  //   //         .then((value) {
+  //   //       if (value.docs.isEmpty) {
+  //   //         isEmpty = true;
+  //   //       } else {
+  //   //         isEmpty = false;
+  //   //         Future.delayed(Duration(milliseconds: 10),() {
+  //   //           setState(() {});
+  //   //         },);
+  //   //       }
+  //   //     });
+  //   //   });
+  //   // } else {
+  //   //   await FirebaseFirestore.instance.collection('users').get().then((value) {
+  //   //     if (value.docs.isEmpty) {
+  //   //       isEmpty = true;
+  //   //       Future.delayed(Duration(milliseconds: 10),() {
+  //   //         setState(() {});
+  //   //       },);
+  //   //   }});
+  //   //     }
+  //   // setState(() {});
+  // }
 
   @override
   Widget build(BuildContext conSelectableText) {
-    getData();
+    // getData();
     return Scaffold(
       floatingActionButton: Row(
         mainAxisSize: MainAxisSize.min,
@@ -148,17 +160,13 @@ class _AdminPageState extends State<AdminPage> {
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: !isEmpty
-            ? StreamBuilder(
-                stream:
-                    FirebaseFirestore.instance.collection('users').snapshots(),
+        child:StreamBuilder(
+                stream:FirebaseFirestore.instance.collection('users').snapshots(),
                 builder: (BuildContext conSelectableText, snapshot) {
                   if (snapshot.hasData && snapshot.data != null) {
                     List? listOfUsers = (snapshot.data?.docs.map((element) {
                       return UserModel.fromJson(element.data()).toRawJson();
                     }))?.toList();
-                    log("${listOfUsers?[0]}");
-                    log("${listOfUsers?.length.toString()}");
                     return SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Padding(
@@ -409,24 +417,24 @@ class _AdminPageState extends State<AdminPage> {
                     child: Padding(
                       padding: EdgeInsets.only(
                           top: MediaQuery.sizeOf(context).height * 0.45),
-                      child: const SizedBox(
+                      child: SizedBox(
                           height: 50,
                           width: 50,
-                          child: CircularProgressIndicator()),
+                          child: CircularProgressIndicator(color: Colors.green.shade300,)),
                     ),
                   );
                 },
               )
-            : Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                        height: MediaQuery.sizeOf(context).height,
-                        child: Lottie.asset('assets/empty.json')),
-                  ],
-                ),
-              ),
+            // : Center(
+            //     child: Column(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //         SizedBox(
+            //             height: MediaQuery.sizeOf(context).height,
+            //             child: Lottie.asset('assets/empty.json')),
+            //       ],
+            //     ),
+            //   ),
       ),
     );
   }
@@ -704,6 +712,7 @@ class _AdminPageState extends State<AdminPage> {
                             Expanded(
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
+                                    backgroundColor: AppColors.button,
                                     disabledBackgroundColor:
                                         Colors.blueGrey.shade100,
                                     minimumSize: const Size.fromHeight(50),
@@ -1042,6 +1051,7 @@ class _AdminPageState extends State<AdminPage> {
                             Expanded(
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
+                                  backgroundColor: AppColors.button,
                                     disabledBackgroundColor:
                                         Colors.blueGrey.shade100,
                                     minimumSize: const Size.fromHeight(50),
