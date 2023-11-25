@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 import 'dart:convert';
 
 class UserModel {
   String lastName;
   String phoneNumber;
+  String city;
   Timestamp date;
   String firstName;
   Certificate certificate;
@@ -13,6 +13,7 @@ class UserModel {
   UserModel({
     required this.lastName,
     required this.phoneNumber,
+    required this.city,
     required this.date,
     required this.firstName,
     required this.certificate,
@@ -26,6 +27,7 @@ class UserModel {
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
     lastName: json["last_name"],
     phoneNumber: json["phone_number"],
+    city: json["city"],
     date: json["date"],
     firstName: json["first_name"],
     certificate: Certificate.fromJson(json["certificate"]),
@@ -35,6 +37,7 @@ class UserModel {
   Map<String, dynamic> toJson() => {
     "last_name": lastName,
     "phone_number": phoneNumber,
+    "city": city,
     "date": date.toString(),
     "first_name": firstName,
     "certificate": certificate.toJson(),
