@@ -2,7 +2,7 @@
 
 This Web Site developed using Flutter Framework to store user data
 
-## Source to check out
+## Source to check it out
 
 - [brightfuturekorea.vercel.app](https://brightfuturekorea.vercel.app/)
 
