@@ -1,16 +1,11 @@
-# reg_web_page
+# Registration Web Site
 
-A new Flutter project.
+This Web Site developed using Flutter Framework to store user data
 
-## Getting Started
+## Source to check out
 
-This project is a starting point for a Flutter application.
+- [brightfuturekorea.vercel.app](https://brightfuturekorea.vercel.app/)
 
-A few resources to get you started if this is your first Flutter project:
+## Login as an Admin
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![image](https://github.com/elbeekk/reg_web_page/assets/121304208/29bb7683-d4c3-4c6b-b659-4e7ab1d411b0)
